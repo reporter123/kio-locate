@@ -287,11 +287,11 @@ int LocateProtocol::getCollapseDirectoryThreshold() const
 /////////////////////////////////////////////////////////////////////
 // KIO STUFF
 
-void LocateProtocol::setUrl(const KUrl& url)
+void LocateProtocol::setUrl(const QUrl& url)
 {
-    if (url.protocol() != "locater") {
+    if (url.scheme() != "locater") {
         QString pattern = url.toString();
-        pattern = pattern.mid(url.protocol().length() + 1);
+        pattern = pattern.mid(url.scheme().length() + 1);
 
         KUrl newUrl;
         newUrl.setProtocol("locater");
@@ -306,7 +306,7 @@ void LocateProtocol::setUrl(const KUrl& url)
             // this search.
             newUrl.setPath("autosearch");
             newUrl.addQueryItem(queryQuery, pattern);
-        } else if (url.protocol() == "rlocate") {
+        } else if (url.scheme() == "rlocate") {
             // Standard regexp search.
             newUrl.setPath("search");
             newUrl.addQueryItem(queryQuery, pattern);
@@ -326,7 +326,7 @@ void LocateProtocol::setUrl(const KUrl& url)
     updateConfig();
 }
 
-void LocateProtocol::get(const KUrl& url)
+void LocateProtocol::get(const QUrl& url)
 {
     kDebug() << "LocateProtocol::get(" << url << ")" << endl;
 
@@ -360,13 +360,13 @@ void LocateProtocol::get(const KUrl& url)
 }
 
 
-void LocateProtocol::stat(const KUrl& url)
+void LocateProtocol::stat(const QUrl& url)
 {
     kDebug() << "LocateProtocol::stat(" << url << ")" << endl ;
 
     setUrl(url);
     //triggers infine launch loop in dolphin
-    if(url == "locate:/" || url == "locate:"){
+    if(url == QString("locate:/") || url == QString("locate:")){
       error(KIO::ERR_DOES_NOT_EXIST, QString());
       return;
     }
@@ -390,7 +390,7 @@ void LocateProtocol::stat(const KUrl& url)
 }
 
 
-void LocateProtocol::listDir(const KUrl& url)
+void LocateProtocol::listDir(const QUrl& url)
 {
     kDebug() << "LocateProtocol::listDir(" << url << ")" << endl ;
 
@@ -407,7 +407,7 @@ void LocateProtocol::listDir(const KUrl& url)
 }
 
 
-void LocateProtocol::mimetype(const KUrl& url)
+void LocateProtocol::mimetype(const QUrl& url)
 {
     kDebug() << "LocateProtocol::mimetype(" << url << ")" << endl ;
 

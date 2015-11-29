@@ -101,27 +101,27 @@ class LocateProtocol : public QObject, public KIO::SlaveBase
 	 * Returns the mimetype "inode/directory".
 	 * @param url the url to work on
 	 */
-	virtual void mimetype(const KUrl& url);
+	virtual void mimetype(const QUrl& url);
 
 	/**
 	 * Raises an error so that eyerone notes we are dealing with
 	 * directories only.
 	 * @param url the url to work on
 	 */
-	virtual void get(const KUrl& url);
+	virtual void get(const QUrl& url);
 
 	/**
 	 * Marks the url as a directory.
 	 * @param url the url to work on
 	 */
-	virtual void stat(const KUrl& url);
+	virtual void stat(const QUrl& url);
 
 	/**
 	 * Searches for the pattern specified in the url.
 	 * Every file found is listed.
 	 * @param url the url to work on
 	 */
-	virtual void listDir(const KUrl& url);
+	virtual void listDir(const QUrl& url);
 
 	/**
 	 * Actually report a hit.
@@ -208,7 +208,7 @@ class LocateProtocol : public QObject, public KIO::SlaveBase
 	 *   solution. Seemed not to work from OpenDialogs ...
 	 * - So no we just internally redirect... Works, isn't it?
 	 */
-	void setUrl(const KUrl& url);
+	void setUrl(const QUrl& url);
 
     void outputHtml(const QString& body);
 };
