@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.2)
 set(KDE_MIN_VERSION "4.4.0")
 
 find_package(ECM 0.0.11 REQUIRED NO_MODULE)
