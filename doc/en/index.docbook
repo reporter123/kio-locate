@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY app "kio-locate">
+<!ENTITY app_version "0.5.0"> <!-- (V.MM.LL) -->
+<!ENTITY kio-locate "<application>&app;</application>">
+<!ENTITY kappname "<application>&app; &app_version;</application>"><!-- Do *not* replace kappname-->
+<!ENTITY my_email "kde-bbrand@kabelmail.de">
+
+<!ENTITY package "kde-module"><!-- kdebase, kdeadmin, etc -->
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+
+<book lang="&language;">
+
+
+<bookinfo>
+<title>&kappname; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Bernd</firstname>
+<othername></othername>
+<surname>Brandstetter</surname>
+<affiliation>
+<address><email>kde-bbrand@kabelmail.de</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Tobi</firstname>
+<othername></othername>
+<surname>Vollebregt</surname>
+<affiliation>
+<address><email>tobivollebregt@gmail.com</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Armin</firstname>
+<othername></othername>
+<surname>Straub</surname>
+<affiliation>
+<address><email>linux@arminstraub.de</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Michael</firstname>
+<othername></othername>
+<surname>Schuerig</surname>
+<affiliation>
+<address><email>michael@schuerig.de</email></address>
+</affiliation>
+</author>
+</authorgroup>
+
+<copyright>
+<year>2010</year>
+<holder>Bernd Brandstetter</holder>
+</copyright>
+<copyright>
+<year>2005</year>
+<holder>Tobi Vollebregt</holder>
+</copyright>
+<copyright>
+<year>2005</year>
+<holder>Armin Straub</holder>
+</copyright>
+<copyright>
+<year>2002</year>
+<holder>Michael Schuerig</holder>
+</copyright>
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2010-02-21</date>
+<releaseinfo>0.5.0 (&kde;4.8)</releaseinfo>
+
+<abstract>
+<para>
+&kio-locate; is a KDE I/O Slave for the locate command.
+</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kio-locate</keyword>
+<keyword>kio_locate</keyword>
+<keyword>kiolocate</keyword>
+<keyword>locate</keyword>
+<keyword>slocate</keyword>
+<keyword>kio-slave</keyword>
+<keyword>kio_slave</keyword>
+<keyword>kioslave</keyword>
+<keyword>search</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+
+<para>
+&kio-locate; is a KDE I/O Slave for the locate command.
+</para>
+<para>
+This means that you can use &kio-locate; by simply typing in konquerors
+address box. You can e.g. type <command>locate:index.html</command> to find
+all files that contain "index.html" in their name.
+</para>
+<para>
+There's even more: You can use &kio-locate; in all KDE applications that
+accept URLs.
+</para>
+<!--para>
+To find out more about &kio-locate; and to look for new versions, you should
+take a look at <ulink url="http://arminstraub.de">arminstraub.de</ulink>.
+</para-->
+</chapter>
+
+
+<chapter id="using-kio-locate">
+<title>How to use this?</title>
+
+<para>
+You can use &kio-locate; mostly as you use locate. Instead of typing
+<command>locate pattern</command> at a command prompt, you start the
+search  with &kio-locate; directly in konqueror. You just enter
+<command>locate:pattern</command> as the address.
+</para>
+<para>
+By default, a search <command>locate:pattern</command> is case insensitive
+if the pattern is lowercase. If the pattern is mixed- or uppercase the
+search is case sensitive. This default behaviour can be overridden.
+</para>
+
+<tip><para>
+Type <command>locater:config</command> in the konqueror address bar to show
+the configuration dialog. Likewise, <command>locater:help</command> shows
+this help document.
+</para></tip>
+
+<sect1 id="kio-locate-patterns">
+<title>How to write patterns</title>
+
+<para>
+<itemizedlist>
+  <listitem><para>Regular wildcard characters may be used in the patterns
+    passed to &kio-locate;: A star (*) matches any string with nonzero length,
+    a question mark (?) matches a single character, and a character list
+    ([abc-z]) matches the characters in the list. A character list can be
+    inverted by putting a caret after the first square bracket ([^abc-z]).
+    </para></listitem>
+  <listitem><para>Every plus (+) in a search is used just as a star (*) is.
+    Instead of <command>locate:*.html</command> you may also type <command>
+    locate:+.html</command>. This is because you can't use the star in
+    konqueror. In other apps both ways are supported.
+    </para></listitem>
+  <listitem><para>Should you need to use a plus in your search you have to
+    escape it with a backslash. Instead of <command>locate:g++</command>
+    you have to use <command>locate:g\+\+</command>.
+    </para></listitem>
+  <listitem><para>Furthermore you can't use a slash as the last character of
+    your query. O.k. you can, but KDE will ignore it. In such a case you can
+    quote your pattern: Write <command>locate:"servicemenus/"</command>
+    rather than <command>locate:servicemenus/</command>.
+    </para></listitem>
+  <listitem><para>A search as e.g. <command>locate:~/*.doc</command> works as
+    you might expect. This means that <command>~/</command> and <command>
+    ~user/</command> are expanded correctly at the beginning of the pattern.
+    </para></listitem>
+  <listitem><para>You may add a filtering pattern after the first pattern,
+    e.g. <command>locate:fish home</command> results in all files whose path
+    contains fish AND home.
+    </para></listitem>
+  <listitem><para>A filtering pattern may be inverted by prefixing it with
+    an exclamation mark. E.g. <command>locate:fish !home</command> results
+    in all files whose path contains fish AND NOT home.
+    </para></listitem>
+  <listitem><para>Any number of filtering patterns may be used.
+    </para></listitem>
+  <listitem><para>With <command>locate:</command> wildcard matching is
+    performed with all patterns. If you're a regular expression guru, you
+    might want to use <command>rlocate:</command>, which enables regexp
+    matching for all filtering patterns (that is: all patterns except
+    the first one).
+    </para></listitem>
+</itemizedlist>
+</para>
+
+</sect1>
+
+<sect1 id="kio-locate-screenshot">
+<title>Take a look at &kio-locate;</title>
+
+<para>
+<screenshot>
+  <screeninfo>Here's a screenshot of &kio-locate;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="screenshot.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase>Screenshot</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="license">
+
+<title>License</title>
+
+&underFDL;      <!-- FDL: do not remove -->
+&underGPL;      <!-- GPL License -->
+
+<para>
+Also, I'd like to thank Google for their
+<ulink url="http://code.google.com/summerofcode.html">Summer Of Code Program</ulink>
+and Jonathan Riddell for being my mentor! <emphasis>-- Tobi Vollebregt</emphasis>
+</para>
+
+</chapter>
+
+&documentation.index;
+</book>
+

@@ -1,0 +1,184 @@
+kio-locate (0.5.0)  2010-02-26 -- Bernd Brandstetter
+
+  * Ported to KDE4
+
+kio-locate (0.4.5)  2006-02-05 -- Armin Straub
+
+  * Search hits with non-ascii characters in the file name always showed up
+  with invalid size/owner/group information (fixed by Johan Billing).
+  * kio-locate should now compile with gcc-4.1_beta (fixed by Jan Jitse
+  Venselaar).
+  * Updated to bksys 1.5.1.
+
+
+kio-locate (0.4.4)  2005-10-19 -- Armin Straub
+
+  + Warn if locate (or whatever is selected) is not installed (suggested
+  by Axel K. Braun).
+  * Use slocate and rlocate as default when available (suggested by Nicolas
+  Degand).
+  * Closed a bug preventing the display of items having the same prefix
+  (reported by Takis).
+
+
+kio-locate (0.4.3)  2005-09-15 -- Armin Straub
+
+  * Made the config dialogs more verbose.
+  * Replaced the previous screenshot (105K) with a similar one (27K)
+  significantly reducing the package size.
+  + Added a (crude?) German translation.
+
+
+kio-locate (0.4.2tvo0.2)  2005-08-21 -- Tobi Vollebregt
+
+  * Hit counting is now recursive.
+  * Fixed a packaging bug which caused the helpfiles to be inaccessable
+  if installed using the .deb file.
+  * Updated to the newest version of bksys.
+
+
+kio-locate (0.4.2tvo0.1)  2005-07-14 -- Tobi Vollebregt
+
+  + Directory collapsing if pattern matches the directory part of a path.
+  + Entries for searching within directories and entries for plain
+  browsing of the directories.
+  + Added full wildcard support in all patterns (after discussion this seemed
+  to be more appropriate than full regexp support for `locate:').
+  + Added full regexp support in the filtering patterns with the `rlocate:'
+  protocol.
+  + A case sensitivity setting in the config page.
+  + A `config succesfully updated' or `config unchanged' message is
+  displayed after closing the config dialog.
+  + Different icons for normal and collapsed directories.
+  + Configurable RegExp filtering, using a white list and a black list.
+  * Fixed searches within a directory other than root (/).
+  * Reduced flickering when listing results.
+  * Number of hits displayed in front of a directory, is now exactly
+  the number of entries you'll see after you click that entry.
+  * `locater:help' now actually works.
+  * Updated to the newest version of bksys.
+
+
+kio-locate (0.4.2)  2005-05-22 -- Armin Straub
+
+  * Removed stupid bug inverting case sensitivity.
+
+
+kio-locate (0.4.1)  2005-05-21 -- Armin Straub
+
+  + Added a config page for settings related to locate (the real
+  one :-)). You can e.g. choose slocate or other replacements now.
+  * For compatibility -i is used instead of --ignore-case when calling
+  locate.
+  * Case Sensitivity is now chosen for every part of the search
+  pattern on its own.
+
+
+kio-locate (0.4.0)  2005-04-10 -- Armin Straub
+
+  + Using scons and bksys instead of autotools and the like. This
+  saves both - a lot of space (around 500kb) and lots of time
+  when developing (thanks to Nagy Thomas for his help).
+  Read INSTALL for a quick guide.
+  + Added the possibility to configure some aspects of kio-locate
+  by envoking locater:config. (More to come...)
+  * Use the locater protocol which uses standard Urls for more
+  complex tasks and keep the locate protocol for simple queries.
+  * Don't use ilocate and clocate anymore. (Check the settings for
+  configuring kio-locate's case sensitivity.)
+  * Some minor enhancements and some new bugs :-)
+
+
+kio-locate (0.3.4)  2005-01-22 -- Armin Straub
+
+  * Removed yet another bug preventing kio-locate from compiling when using
+  KDE 3.2 (thanks to Sergio Cambra).
+
+
+kio-locate (0.3.3)  2005-01-21 -- Armin Straub
+
+  * Removed small bug preventing kio-locate from compiling on some systems
+  (thanks to Francesco di Cugno who also provided a package for Slackware).
+
+
+kio-locate (0.3.2)  2005-01-17 -- Armin Straub
+
+  + Several hits in one directory are now grouped together. For code and
+  ideas lots of thanks to Fred Schaettgen.
+  * The search process should be a bit faster as only those files are
+  checked for existence that are displayed (thanks to Fred Schaettgen).
+
+
+kio-locate (0.3.1)  2004-12-10 -- Armin Straub
+
+  * The locate protocol no more does only case sensitive searches, but
+  searches case insensitive by default and switches to case sensitivity if
+  the search string contains upper case characters.
+  + Added the protocol clocate for case sensitive searches.
+  + Added a locate search to konquerors list of web shortcuts. This enables
+  you to select locate as the default search engine in konqueror. (Whenever
+  you enter a nonsense url then, konqueror will use locate to search for
+  this "nonsense".)
+
+
+kio-locate (0.3.0)  2004-11-01 -- Armin Straub
+
+  * Filtering by regular expressions is now possible:
+  You can use "locate:pattern [!]regexp ..." now. pattern uses standard locate
+  syntax followed by regexps that may be preceded by ! meaning that they
+  shouldn't match.
+
+
+kio-locate (0.2.4)  2004-10-26 -- Armin Straub
+
+  * Removed bugs in kio-locate.spec used to generate rpm's (thanks to Sami
+  Vento).
+
+
+kio-locate (0.2.3)  2004-10-25 -- Armin Straub
+
+  * Taking current locale into account, so kio-locate won't change non-latin1
+  encoded file names (thanks to Jakub Stachowski).
+  + Added kio-locate.spec so that you can build rpms by just typing
+  rpmbuild -ta --target=i686 kio-locate_$VERSION.tar.gz (thanks to Sami
+  Vento).
+
+
+kio-locate (0.2.2)  2004-10-24 -- Armin Straub
+
+  + Added the protocol ilocate for case insensitive searches.
+  + Interpret ~/ and ~user/ in a search (expand just as the shell normally
+  does).
+  + Detection of konquerors autocompletion.
+
+
+kio-locate (0.2.1)  2004-10-22 -- Armin Straub
+
+  + Added french translation (thanks to Laurent Rathle).
+  * Included stdlib.h correctly (previously preventing kio-locate to compile on
+  some machines).
+
+
+kio-locate (0.2.0)  2004-10-15 -- Armin Straub
+
+  * Complete rewrite.
+  * Works with KDE 3.3.
+  + Displays detailed information in Konqueror (not just filenames).
+  + Enabled patterns like the ones used for locate.
+
+
+kio-locate (0.1.1-1) -- Michael Schuerig
+
+  * Corrected URL prefix ("file:" instead of "file:/").
+  * Update admin dir.
+
+
+kio-locate (0.1-2) -- Michael Schuerig
+
+  * Rebuild for KDE 3.1.
+
+
+kio-locate (0.1-1) -- Michael Schuerig
+
+  * Initial Release.
+

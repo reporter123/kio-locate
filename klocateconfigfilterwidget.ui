@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KLocateConfigFilterWidget</class>
+ <widget class="QWidget" name="KLocateConfigFilterWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>772</width>
+    <height>372</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Filter Settings</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>A path must match at least one of the regular expressions in the White List and it must not match any of the expressions in the Black List for being displayed as a hit.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="KEditListBox" name="kcfg_whiteList">
+        <property name="whatsThis">
+         <string>A path must match at least one of these regular expressions.</string>
+        </property>
+        <property name="title">
+         <string>White List</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="KEditListBox" name="kcfg_blackList">
+        <property name="whatsThis">
+         <string>A path must not match any of these regular expressions.</string>
+        </property>
+        <property name="title">
+         <string>Black List</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>&lt;i&gt;Hint:&lt;/i&gt; E.g. replacing the default '.' entry by '^/home/user/' will only allow hits in the home directory of user.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KEditListBox</class>
+   <extends>QGroupBox</extends>
+   <header>keditlistbox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

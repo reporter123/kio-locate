@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KLocateConfigWidget</class>
+ <widget class="QWidget" name="KLocateConfigWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>493</width>
+    <height>285</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>General Settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QLabel" name="textLabel1">
+          <property name="text">
+           <string>Case se&amp;nsitivity:</string>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+          <property name="buddy">
+           <cstring>kcfg_caseSensitivity</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>284</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="KComboBox" name="kcfg_caseSensitivity">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="whatsThis">
+           <string>&quot;Auto&quot; for automatic case sensitivity determination (lowercase pattern -&gt; case insensitive, upper or mixedcase pattern -&gt; case sensitive), &quot;Sensitive&quot; for case sensitive and &quot;Insensitive&quot; for case insensitive.</string>
+          </property>
+          <item>
+           <property name="text">
+            <string comment="Automatic case-sensitivity">Auto</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Case-sensitive search">Sensitive</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Case-insensitive search">Insensitive</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="textLabel2">
+        <property name="text">
+         <string>&lt;i&gt;Hint:&lt;/i&gt; With &quot;Auto&quot; case sensitivity a pattern will be case insensitive if it is lowercase and case sensitive if it is mixed or uppercase.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Collapsing Search Results</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="_2">
+        <item>
+         <widget class="QLabel" name="textLabel1_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&amp;Collapse a directory with more hits:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+          <property name="buddy">
+           <cstring>kcfg_collapseDirectoryThreshold</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>141</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="KIntSpinBox" name="kcfg_collapseDirectoryThreshold">
+          <property name="whatsThis">
+           <string>Collapse a directory with more hits.</string>
+          </property>
+          <property name="maximum">
+           <number>9999</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="_3">
+        <item>
+         <widget class="QLabel" name="textLabel1_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Text of a collapsed &amp;directory:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+          <property name="buddy">
+           <cstring>kcfg_collapsedDisplay</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer1">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>100</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="KLineEdit" name="kcfg_collapsedDisplay">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="whatsThis">
+           <string>Hint: %1 is substituted by the number of hits, %2 by the name of the directory.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="textLabel1_3_2">
+        <property name="text">
+         <string>&lt;i&gt;Hint:&lt;/i&gt; %1 is substituted by the number of hits and %2 by the name of the directory.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="_4">
+        <item>
+         <widget class="QLabel" name="textLabel1_2">
+          <property name="text">
+           <string>&amp;Icon of a collapsed directory:</string>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+          <property name="buddy">
+           <cstring>kcfg_collapsedIcon</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="spacer3_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>161</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="KComboBox" name="kcfg_collapsedIcon">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Blue</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Green</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Grey</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Orange</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Red</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Violet</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string comment="Folder icon color">Yellow</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>78</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

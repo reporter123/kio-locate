@@ -1,0 +1,37 @@
+[Protocol]
+exec=kio_locate
+protocol=locate
+input=none
+output=filesystem
+listing=Name,Type,Size,Date,AccessDate,Access,Owner,Group,Link
+reading=true
+Icon=find
+Description=KDE I/O Slave for the locate command
+Description[bg]=Входно-изходна връзка на KDE към командата locate
+Description[de]=Ein-/Ausgabemodul für den locate-Befehl
+Description[en_GB]=KDE I/O Slave for the locate command
+Description[es]=Esclavo de E/S de KDE para la orden «locate»
+Description[et]=Käsu locate KDE I/O-moodul
+Description[hu]=KDE I/O Szolga az elhelyezés parancs számára
+Description[ml]=ലോക്കേറ്റ് ആജ്ഞയ്ക്ക് വേണ്ടിയുള്ള കെഡിഇ ഐ/ഒ സ്ലേവ്
+Description[nds]=In-/Utgaavmoduul för't Utföhren vun den Befehl "locate" ünner KDE.
+Description[nl]=KDE I/O Slave voor het commando locate
+Description[pl]=KDE I/O Slave dla polecenia locate
+Description[pt]='I/O Slave' do KDE para o comando 'locate'
+Description[pt_BR]=I/O Slave do KDE para o comando locate
+Description[ro]=Slave KDE I/O pentru comanda locate
+Description[sv]=KDE I/O-slav för kommandot locate
+Description[th]=KDE I/O Slave สำหรับคำสั่ง locate
+Description[tr]=locate komutu için KDE kioslave
+Description[ug]=locate بۇيرۇقى ئۈچۈن KDE I/O قۇلى(Slave)
+Description[uk]=Підлеглий засіб вводу-виводу KDE для команди locate
+Description[x-test]=xxKDE I/O Slave for the locate commandxx
+
+# Using this will e.g. display previews etc.
+Class=:local
+
+# No special parsing needed. locate does not use URL syntax.
+URIMode=rawuri
+
+# Our very sophisticated documentation
+X-DocPath=kioslave/locate/index.html

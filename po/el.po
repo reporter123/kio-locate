@@ -1,0 +1,478 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Glentadakis Dimitrios <dglent@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio-locate\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-20 11:29+0100\n"
+"PO-Revision-Date: 2010-03-04 20:18+0100\n"
+"Last-Translator: Glentadakis Dimitrios <dglent@gmail.com>\n"
+"Language-Team: Greek <translators_team@mandrivalinux.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: kio_locate.cpp:340
+msgid ""
+"<h1>\"%1\" could not be started.</h1><p>Please note that kio-locate can't be "
+"used on its own. You need an additional program for doing searches. "
+"Typically this is the command line tool <i>locate</i> that can be found in "
+"many distributions by default. You can check if the correct tool is used by "
+"looking at the <a href=\"locater:config\">setting</a> \"Locate Binary\".</"
+"p><p>Besides the mentioned tool <i>locate</i>, kio-locate can use any tool "
+"that uses the same syntax. In particular, it was reported to work with "
+"<i>slocate</i> and <i>rlocate</i></p>."
+msgstr ""
+
+#: kio_locate.cpp:514
+msgid "Locating %1 ..."
+msgstr "Αναζήτηση του %1 σε εξέλιξη ..."
+
+#: kio_locate.cpp:634
+#, fuzzy
+msgctxt "Locate processing finished."
+msgid "Finished."
+msgstr "Ολοκληρώθηκε."
+
+#: kio_locate.cpp:770
+msgid "Configure - kio-locate"
+msgstr "Ρύθμιση - kio-locate"
+
+#: kio_locate.cpp:787
+#, fuzzy
+msgctxt "General settings"
+msgid "General"
+msgstr "Γενικά"
+
+#: kio_locate.cpp:788
+#, fuzzy
+msgctxt "Filter settings"
+msgid "Filters"
+msgstr "Φίλτρα"
+
+#: kio_locate.cpp:789
+#, fuzzy
+msgctxt "Locate tool settings"
+msgid "Locate"
+msgstr "Αναζήτηση"
+
+#: kio_locate.cpp:807
+#, fuzzy
+msgid "Configuration successfully updated."
+msgstr "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία."
+
+#: kio_locate.cpp:809
+msgid "Configuration unchanged."
+msgstr "Καμία αλλαγή στις ρυθμίσεις"
+
+#. i18n: file: kio_locate.kcfg:11
+#. i18n: ectx: label, entry (caseSensitivity), group (General)
+#: po/rc.cpp:3 rc.cpp:3
+#, fuzzy
+msgid "Case sensitivity"
+msgstr "Διάκριση μεταξύ πεζών/κεφαλαίων:"
+
+#. i18n: file: kio_locate.kcfg:16
+#. i18n: ectx: label, entry (collapseDirectoryThreshold), group (General)
+#: po/rc.cpp:6 rc.cpp:6
+#, fuzzy
+msgid "Collapse directory"
+msgstr "Κείμενο ενός συνεπτυγμένου καταλόγου:"
+
+#. i18n: file: kio_locate.kcfg:21
+#. i18n: ectx: label, entry (collapsedDisplay), group (General)
+#: po/rc.cpp:9 rc.cpp:9
+#, fuzzy
+msgid "How to display a collapsed directory entry"
+msgstr "Εικονίδιο ενός συνεπτυγμένου καταλόγου:"
+
+#. i18n: file: kio_locate.kcfg:26
+#. i18n: ectx: label, entry (collapsedIcon), group (General)
+#: po/rc.cpp:12 rc.cpp:12
+#, fuzzy
+msgid "Icon to use for a collapsed directory entry"
+msgstr "Εικονίδιο ενός συνεπτυγμένου καταλόγου:"
+
+#. i18n: file: kio_locate.kcfg:33
+#. i18n: ectx: label, entry (whiteList), group (Filtering)
+#: po/rc.cpp:15 rc.cpp:15
+#, fuzzy
+msgid "White list"
+msgstr "&Λευκή λίστα"
+
+#. i18n: file: kio_locate.kcfg:38
+#. i18n: ectx: label, entry (blackList), group (Filtering)
+#: po/rc.cpp:18 rc.cpp:18
+#, fuzzy
+msgid "Black list"
+msgstr "&Μαύρη λίστα"
+
+#. i18n: file: kio_locate.kcfg:45
+#. i18n: ectx: label, entry (locateBinary), group (Locate)
+#. i18n: file: klocateconfiglocatewidget.ui:43
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: file: kio_locate.kcfg:45
+#. i18n: ectx: label, entry (locateBinary), group (Locate)
+#. i18n: file: klocateconfiglocatewidget.ui:43
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: po/rc.cpp:21 po/rc.cpp:55 rc.cpp:21 rc.cpp:55
+msgid "Locate Binary"
+msgstr "Locate σύστημα υποστήριξης"
+
+#. i18n: file: kio_locate.kcfg:50
+#. i18n: ectx: label, entry (locateAdditionalArguments), group (Locate)
+#: po/rc.cpp:24 rc.cpp:24
+#, fuzzy
+msgid "Additional Arguments for locate"
+msgstr "Επιπλέον παράμετροι:"
+
+#. i18n: file: klocateconfigfilterwidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: po/rc.cpp:27 rc.cpp:27
+msgid "Filter Settings"
+msgstr "Ρυθμίσεις φίλτρου"
+
+#. i18n: file: klocateconfigfilterwidget.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: po/rc.cpp:30 rc.cpp:30
+msgid ""
+"A path must match at least one of the regular expressions in the White List "
+"and it must not match any of the expressions in the Black List for being "
+"displayed as a hit."
+msgstr ""
+"Η διαδρομή πρέπει να συσχετίζεται με τουλάχιστο μια από τις κανονικές "
+"εκφράσεις στην λευκή λίστα και δεν πρέπει να συσχετίζεται με καμία από τις "
+"κανονικές εκφράσεις στην μαύρη λίστα ώστε να εμφανιστεί ως αποτέλεσμα."
+
+#. i18n: file: klocateconfigfilterwidget.ui:33
+#. i18n: ectx: property (whatsThis), widget (KEditListBox, kcfg_whiteList)
+#: po/rc.cpp:33 rc.cpp:33
+msgid "A path must match at least one of these regular expressions."
+msgstr ""
+"Η διαδρομή πρέπει να συσχετίζεται με τουλάχιστον μια από αυτές τις κανονικές "
+"εκφράσεις."
+
+#. i18n: file: klocateconfigfilterwidget.ui:36
+#. i18n: ectx: property (title), widget (KEditListBox, kcfg_whiteList)
+#: po/rc.cpp:36 rc.cpp:36
+#, fuzzy
+msgid "White List"
+msgstr "&Λευκή λίστα"
+
+#. i18n: file: klocateconfigfilterwidget.ui:43
+#. i18n: ectx: property (whatsThis), widget (KEditListBox, kcfg_blackList)
+#: po/rc.cpp:39 rc.cpp:39
+#, fuzzy
+msgid "A path must not match any of these regular expressions."
+msgstr ""
+"Μια διαδρομή μπορεί να μην συσχετίζεται με καμία από αυτές τις κανονικές "
+"εκφράσεις."
+
+#. i18n: file: klocateconfigfilterwidget.ui:46
+#. i18n: ectx: property (title), widget (KEditListBox, kcfg_blackList)
+#: po/rc.cpp:42 rc.cpp:42
+#, fuzzy
+msgid "Black List"
+msgstr "&Μαύρη λίστα"
+
+#. i18n: file: klocateconfigfilterwidget.ui:53
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: po/rc.cpp:45 rc.cpp:45
+msgid ""
+"<i>Hint:</i> E.g. replacing the default '.' entry by '^/home/user/' will "
+"only allow hits in the home directory of user."
+msgstr ""
+"<i>Συμβουλή:</i> Π.χ. αν αντικαταστήστε το από προεπιλογή '.' με το '^/home/"
+"user/' θα επιτρέπει αποτελέσματα από τον προσωπικό κατάλογο του χρήστη."
+
+#. i18n: file: klocateconfiglocatewidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: po/rc.cpp:48 rc.cpp:48
+msgid "Locate Settings"
+msgstr "Ρυθμίσεις του Locate"
+
+#. i18n: file: klocateconfiglocatewidget.ui:24
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#: po/rc.cpp:51 rc.cpp:51
+msgid ""
+"<p>kio-locate does not handle the settings of locate, because this setup "
+"varies among different distributions. There are even distributions that use "
+"replacements like slocate.</p>\n"
+"<p>To configure locate you should take a look at the manpage of locate. "
+"Since most distributions use cron for updating locate's database, it may "
+"also be useful to take a look at the manpage of crontab.</p>"
+msgstr ""
+"<p>το kio-locate δεν διαχειρίζεται τις ρυθμίσεις του locate, διότι οι "
+"ρυθμίσεις δεν είναι ίδιες σε όλες τις διανομές. Υπάρχουν μερικές διανομές "
+"που χρησιμοποιούν υποκατάστατα όπως το slocate.</p>\n"
+"<p>Για να ρυθμίσετε το locate θα πρέπει να βρείτε πληροφορίες στην "
+"τεκμηρίωση man του locate. Από τη στιγμή που οι περισσότερες διανομές "
+"χρησιμοποιούν το cron για την ενημέρωση της βάσης δεδομένων του locate, ίσως "
+"σας είναι χρήσιμο να βρείτε πληροφορίες και στην τεκμηρίωση man του crontab."
+"</p>"
+
+#. i18n: file: klocateconfiglocatewidget.ui:52
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3_2_2)
+#: po/rc.cpp:58 rc.cpp:58
+msgid ""
+"Use these settings only if you really know what you do. Otherwise the "
+"default should be ok."
+msgstr ""
+"Χρησιμοποιώντας αυτές τις ρυθμίσεις μόνο αν γνωρίζετε τι κάνετε. Διαφορετικά "
+"αφήστε τις προκαθορισμένες."
+
+#. i18n: file: klocateconfiglocatewidget.ui:67
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
+#: po/rc.cpp:61 rc.cpp:61
+msgid "Locate &binary:"
+msgstr "Locate σύστημα υποστήριξης:"
+
+#. i18n: file: klocateconfiglocatewidget.ui:117
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3_2)
+#: po/rc.cpp:64 rc.cpp:64
+msgid ""
+"<i>Hint:</i> If you don't specify a value here (which is the default), kio-"
+"locate will automatically pick slocate, rlocate or locate (in that order)."
+msgstr ""
+
+#. i18n: file: klocateconfiglocatewidget.ui:132
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4_2)
+#: po/rc.cpp:67 rc.cpp:67
+msgid "Additional &arguments:"
+msgstr "Επιπλέον παράμετροι:"
+
+#. i18n: file: klocateconfiglocatewidget.ui:173
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_locateAdditionalArguments)
+#: po/rc.cpp:70 rc.cpp:70
+#, fuzzy
+msgid ""
+"Do not use -r or -i here. The first will confuse kio-locate, while the "
+"latter can be changed through the caseSensitivity option."
+msgstr ""
+"<i>Συμβουλή:</i> Μην χρησιμοποιείτε -r ή -i εδώ. Το πρώτο θα μπερδέψει το "
+"kio-locate, και το δεύτερο μπορεί να αλλάξει από την επιλογή «Διάκριση μεταξύ "
+"πεζών/κεφαλαίων»."
+
+#. i18n: file: klocateconfiglocatewidget.ui:182
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: po/rc.cpp:73 rc.cpp:73
+msgid ""
+"<i>Hint:</i> Do not use -r or -i here. The first will confuse kio-locate, "
+"and the latter can be changed through the \"Case sensitivity\" option."
+msgstr ""
+"<i>Συμβουλή:</i> Μην χρησιμοποιείτε -r ή -i εδώ. Το πρώτο θα μπερδέψει το "
+"kio-locate, και το δεύτερο μπορεί να αλλάξει από την επιλογή «Διάκριση μεταξύ "
+"πεζών/κεφαλαίων»."
+
+#. i18n: file: klocateconfigwidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: po/rc.cpp:76 rc.cpp:76
+msgid "General Settings"
+msgstr "Γενικές ρυθμίσεις"
+
+#. i18n: file: klocateconfigwidget.ui:25
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: po/rc.cpp:79 rc.cpp:79
+msgid "Case se&nsitivity:"
+msgstr "Διάκριση μεταξύ πεζών/κεφαλαίων:"
+
+#. i18n: file: klocateconfigwidget.ui:57
+#. i18n: ectx: property (whatsThis), widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:82 rc.cpp:82
+msgid ""
+"\"Auto\" for automatic case sensitivity determination (lowercase pattern -> "
+"case insensitive, upper or mixedcase pattern -> case sensitive), \"Sensitive"
+"\" for case sensitive and \"Insensitive\" for case insensitive."
+msgstr ""
+
+#. i18n: file: klocateconfigwidget.ui:61
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:85 rc.cpp:85
+#, fuzzy
+msgctxt "Automatic case-sensitivity"
+msgid "Auto"
+msgstr "Αυτόματο"
+
+#. i18n: file: klocateconfigwidget.ui:66
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:88 rc.cpp:88
+#, fuzzy
+msgctxt "Case-sensitive search"
+msgid "Sensitive"
+msgstr "Χρήση"
+
+#. i18n: file: klocateconfigwidget.ui:71
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:91 rc.cpp:91
+#, fuzzy
+msgctxt "Case-insensitive search"
+msgid "Insensitive"
+msgstr "Παράβλεψη"
+
+#. i18n: file: klocateconfigwidget.ui:81
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: po/rc.cpp:94 rc.cpp:94
+#, fuzzy
+msgid ""
+"<i>Hint:</i> With \"Auto\" case sensitivity a pattern will be case "
+"insensitive if it is lowercase and case sensitive if it is mixed or "
+"uppercase."
+msgstr ""
+"<i>Συμβουλή:</i>Αν χρησιμοποιείται την αυτόματη διάκριση πεζών/κεφαλαίων ένα "
+"όρισμα θα παραβλέπεται αν είναι με πεζά γράμματα και με χρήση της διάκρισης "
+"αν είναι ανάμεικτο ή με κεφαλαία."
+
+#. i18n: file: klocateconfigwidget.ui:94
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: po/rc.cpp:97 rc.cpp:97
+msgid "Collapsing Search Results"
+msgstr "Σύμπτυξη αποτελεσμάτων αναζήτησης"
+
+#. i18n: file: klocateconfigwidget.ui:108
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
+#: po/rc.cpp:100 rc.cpp:100
+msgid "&Collapse a directory with more hits:"
+msgstr "&Σύμπτυξη ενός καταλόγου με περισσότερα αποτελέσματα:"
+
+#. i18n: file: klocateconfigwidget.ui:140
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, kcfg_collapseDirectoryThreshold)
+#: po/rc.cpp:103 rc.cpp:103
+msgid "Collapse a directory with more hits."
+msgstr "Σύμπτυξη ενός καταλόγου με περισσότερα αποτελέσματα."
+
+#. i18n: file: klocateconfigwidget.ui:160
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
+#: po/rc.cpp:106 rc.cpp:106
+msgid "Text of a collapsed &directory:"
+msgstr "Κείμενο ενός συνεπτυγμένου καταλόγου:"
+
+#. i18n: file: klocateconfigwidget.ui:204
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_collapsedDisplay)
+#: po/rc.cpp:110 rc.cpp:110
+#, fuzzy, no-c-format
+msgid ""
+"Hint: %1 is substituted by the number of hits, %2 by the name of the "
+"directory."
+msgstr "<i>Συμβουλή:</i>"
+
+#. i18n: file: klocateconfigwidget.ui:213
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3_2)
+#: po/rc.cpp:114 rc.cpp:114
+#, no-c-format
+msgid ""
+"<i>Hint:</i> %1 is substituted by the number of hits and %2 by the name of "
+"the directory."
+msgstr "<i>Συμβουλή:</i>"
+
+#. i18n: file: klocateconfigwidget.ui:225
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: po/rc.cpp:117 rc.cpp:117
+msgid "&Icon of a collapsed directory:"
+msgstr "Εικονίδιο ενός συνεπτυγμένου καταλόγου:"
+
+#. i18n: file: klocateconfigwidget.ui:258
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:120 rc.cpp:120
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Blue"
+msgstr "Μπλε"
+
+#. i18n: file: klocateconfigwidget.ui:263
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:123 rc.cpp:123
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Green"
+msgstr "Πράσινο"
+
+#. i18n: file: klocateconfigwidget.ui:268
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:126 rc.cpp:126
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Grey"
+msgstr "Γκρι"
+
+#. i18n: file: klocateconfigwidget.ui:273
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:129 rc.cpp:129
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Orange"
+msgstr "Πορτοκαλί"
+
+#. i18n: file: klocateconfigwidget.ui:278
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:132 rc.cpp:132
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Red"
+msgstr "Κόκκινο"
+
+#. i18n: file: klocateconfigwidget.ui:283
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:135 rc.cpp:135
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Violet"
+msgstr "Μωβ"
+
+#. i18n: file: klocateconfigwidget.ui:288
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:138 rc.cpp:138
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Yellow"
+msgstr "Κίτρινο"
+
+#: po/rc.cpp:139 rc.cpp:139
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: po/rc.cpp:140 rc.cpp:140
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid "(%1 Hits) %2"
+#~ msgstr "(%1 Αποτελέσματα) %2"
+
+#, fuzzy
+#~ msgid ""
+#~ "<i>Hint:</i> Adding e.g. '/.' will no longer display hidden files (this "
+#~ "will be unnecessary in some next version of kde though)."
+#~ msgstr ""
+#~ "<i>Συμβουλή:</i> Προσθέτοντας π.χ. '/\\.' δεν θα εμφανίζονται πλέον κρυφά "
+#~ "αρχεία (αυτό δεν θα είναι απαραίτητο σε μια επόμενη έκδοση του kde)."
+
+#~ msgid "KLocateConfigFilterWidget"
+#~ msgstr "KLocateConfigFilterWidget"
+
+#~ msgid "KLocateConfigLocateWidget"
+#~ msgstr "KLocateConfigLocateWidget"
+
+#~ msgid ""
+#~ "<i>Hint:</i> You may for example choose to use slocate instead of plain "
+#~ "old locate."
+#~ msgstr ""
+#~ "<i>Συμβουλή:</i> Μπορείτε για παράδειγμα να επιλέξετε την χρήση του "
+#~ "slocate αντί του παλιού locate."
+
+#~ msgid "KLocateConfigWidget"
+#~ msgstr "KLocateConfigWidget"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Δημήτριος Γλενταδάκης"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "dglent@gmail.com"

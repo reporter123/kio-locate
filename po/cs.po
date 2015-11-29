@@ -1,0 +1,460 @@
+# kio-locate: KDE I/O Slave for the locate command
+#
+# Copyright (C) 2004 by Armin Straub
+# linux@arminstraub.de
+#
+# This file is distributed under the same license as kio-locate.
+# Pavel, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio-locate\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-20 11:29+0100\n"
+"PO-Revision-Date: 2010-03-04 11:08+0100\n"
+"Last-Translator: Pavel\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Language: cs_CZ\n"
+
+#: kio_locate.cpp:340
+msgid ""
+"<h1>\"%1\" could not be started.</h1><p>Please note that kio-locate can't be "
+"used on its own. You need an additional program for doing searches. "
+"Typically this is the command line tool <i>locate</i> that can be found in "
+"many distributions by default. You can check if the correct tool is used by "
+"looking at the <a href=\"locater:config\">setting</a> \"Locate Binary\".</"
+"p><p>Besides the mentioned tool <i>locate</i>, kio-locate can use any tool "
+"that uses the same syntax. In particular, it was reported to work with "
+"<i>slocate</i> and <i>rlocate</i></p>."
+msgstr ""
+
+#: kio_locate.cpp:514
+msgid "Locating %1 ..."
+msgstr "Hledání %1 ..."
+
+#: kio_locate.cpp:634
+#, fuzzy
+msgctxt "Locate processing finished."
+msgid "Finished."
+msgstr "Hledání dokončeno."
+
+#: kio_locate.cpp:770
+msgid "Configure - kio-locate"
+msgstr "Nastavení - kio-locate"
+
+#: kio_locate.cpp:787
+#, fuzzy
+msgctxt "General settings"
+msgid "General"
+msgstr "Obecné"
+
+#: kio_locate.cpp:788
+#, fuzzy
+msgctxt "Filter settings"
+msgid "Filters"
+msgstr "Filtry"
+
+#: kio_locate.cpp:789
+#, fuzzy
+msgctxt "Locate tool settings"
+msgid "Locate"
+msgstr "Locate"
+
+#: kio_locate.cpp:807
+msgid "Configuration successfully updated."
+msgstr "Nastavení bylo úspěšně převzato."
+
+#: kio_locate.cpp:809
+msgid "Configuration unchanged."
+msgstr "Nastavení nezměněno."
+
+#. i18n: file: kio_locate.kcfg:11
+#. i18n: ectx: label, entry (caseSensitivity), group (General)
+#: po/rc.cpp:3 rc.cpp:3
+msgid "Case sensitivity"
+msgstr "Psaní velkých a malých písmen"
+
+#. i18n: file: kio_locate.kcfg:16
+#. i18n: ectx: label, entry (collapseDirectoryThreshold), group (General)
+#: po/rc.cpp:6 rc.cpp:6
+msgid "Collapse directory"
+msgstr "Složit adresář"
+
+#. i18n: file: kio_locate.kcfg:21
+#. i18n: ectx: label, entry (collapsedDisplay), group (General)
+#: po/rc.cpp:9 rc.cpp:9
+msgid "How to display a collapsed directory entry"
+msgstr "Jak zobrazit složený adresářový záznam"
+
+#. i18n: file: kio_locate.kcfg:26
+#. i18n: ectx: label, entry (collapsedIcon), group (General)
+#: po/rc.cpp:12 rc.cpp:12
+msgid "Icon to use for a collapsed directory entry"
+msgstr "Ikona pro složený adresářový záznam"
+
+#. i18n: file: kio_locate.kcfg:33
+#. i18n: ectx: label, entry (whiteList), group (Filtering)
+#: po/rc.cpp:15 rc.cpp:15
+msgid "White list"
+msgstr "Bílá listina"
+
+#. i18n: file: kio_locate.kcfg:38
+#. i18n: ectx: label, entry (blackList), group (Filtering)
+#: po/rc.cpp:18 rc.cpp:18
+msgid "Black list"
+msgstr "Černá listina"
+
+#. i18n: file: kio_locate.kcfg:45
+#. i18n: ectx: label, entry (locateBinary), group (Locate)
+#. i18n: file: klocateconfiglocatewidget.ui:43
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: file: kio_locate.kcfg:45
+#. i18n: ectx: label, entry (locateBinary), group (Locate)
+#. i18n: file: klocateconfiglocatewidget.ui:43
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: po/rc.cpp:21 po/rc.cpp:55 rc.cpp:21 rc.cpp:55
+msgid "Locate Binary"
+msgstr "Jádro locate"
+
+#. i18n: file: kio_locate.kcfg:50
+#. i18n: ectx: label, entry (locateAdditionalArguments), group (Locate)
+#: po/rc.cpp:24 rc.cpp:24
+msgid "Additional Arguments for locate"
+msgstr "Dodatečné argumenty pro locate"
+
+#. i18n: file: klocateconfigfilterwidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: po/rc.cpp:27 rc.cpp:27
+msgid "Filter Settings"
+msgstr "Nastavení filtru"
+
+#. i18n: file: klocateconfigfilterwidget.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: po/rc.cpp:30 rc.cpp:30
+msgid ""
+"A path must match at least one of the regular expressions in the White List "
+"and it must not match any of the expressions in the Black List for being "
+"displayed as a hit."
+msgstr ""
+"Cesta, aby se zobrazila jako nález, musí odpovídat alespoň jednomu "
+"regulárnímu výrazu nacházejícímu se na bílé listině a nesmí odpovídat "
+"žádnému regulárnímu výrazu nacházejícímu se na černé listině."
+
+#. i18n: file: klocateconfigfilterwidget.ui:33
+#. i18n: ectx: property (whatsThis), widget (KEditListBox, kcfg_whiteList)
+#: po/rc.cpp:33 rc.cpp:33
+msgid "A path must match at least one of these regular expressions."
+msgstr "Cesta musí odpovídat alespoň jednomu z těchto regulárních výrazů."
+
+#. i18n: file: klocateconfigfilterwidget.ui:36
+#. i18n: ectx: property (title), widget (KEditListBox, kcfg_whiteList)
+#: po/rc.cpp:36 rc.cpp:36
+msgid "White List"
+msgstr "Bílá listina"
+
+#. i18n: file: klocateconfigfilterwidget.ui:43
+#. i18n: ectx: property (whatsThis), widget (KEditListBox, kcfg_blackList)
+#: po/rc.cpp:39 rc.cpp:39
+msgid "A path must not match any of these regular expressions."
+msgstr "Cesta nesmí odpovídat žádnému z těchto regulárních výrazů."
+
+#. i18n: file: klocateconfigfilterwidget.ui:46
+#. i18n: ectx: property (title), widget (KEditListBox, kcfg_blackList)
+#: po/rc.cpp:42 rc.cpp:42
+msgid "Black List"
+msgstr "Černá listina"
+
+#. i18n: file: klocateconfigfilterwidget.ui:53
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: po/rc.cpp:45 rc.cpp:45
+msgid ""
+"<i>Hint:</i> E.g. replacing the default '.' entry by '^/home/user/' will "
+"only allow hits in the home directory of user."
+msgstr ""
+"<i>Rada:</i> Můžete kupříkladu nahradit výchozí zápis '.' pomocí '^/home/"
+"user/', aby se ukazovaly pouze nálezy v domácím adresáři uživatele."
+
+#. i18n: file: klocateconfiglocatewidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: po/rc.cpp:48 rc.cpp:48
+msgid "Locate Settings"
+msgstr "Nastavení pro Locate"
+
+#. i18n: file: klocateconfiglocatewidget.ui:24
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#: po/rc.cpp:51 rc.cpp:51
+msgid ""
+"<p>kio-locate does not handle the settings of locate, because this setup "
+"varies among different distributions. There are even distributions that use "
+"replacements like slocate.</p>\n"
+"<p>To configure locate you should take a look at the manpage of locate. "
+"Since most distributions use cron for updating locate's database, it may "
+"also be useful to take a look at the manpage of crontab.</p>"
+msgstr ""
+"<p>Nastavení z locate nemůžete převzít do kio-locate, protože mezi "
+"jednotlivými distribucemi jsou velké rozdíly. Některé dokonce používají jiný "
+"program nahrazující locate, jako je například slocate.</p>\n"
+"<p>Pro nastavení locate se vyplatí podívat se na manuálové stránky k locate. "
+"Jelikož většina distribucí k aktualizaci databáze locate používá cron, "
+"vyplatí se také podívat se na manuálové stránky k crontab a přečíst si je.</"
+"p>"
+
+#. i18n: file: klocateconfiglocatewidget.ui:52
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3_2_2)
+#: po/rc.cpp:58 rc.cpp:58
+msgid ""
+"Use these settings only if you really know what you do. Otherwise the "
+"default should be ok."
+msgstr ""
+"Tato nastavení použijte jen tehdy, když přesně víte, co děláte. V opačném "
+"případě by předlohy s výchozím nastavením měly postačovat."
+
+#. i18n: file: klocateconfiglocatewidget.ui:67
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
+#: po/rc.cpp:61 rc.cpp:61
+msgid "Locate &binary:"
+msgstr "&Cesta k locate:"
+
+#. i18n: file: klocateconfiglocatewidget.ui:117
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3_2)
+#: po/rc.cpp:64 rc.cpp:64
+msgid ""
+"<i>Hint:</i> If you don't specify a value here (which is the default), kio-"
+"locate will automatically pick slocate, rlocate or locate (in that order)."
+msgstr ""
+
+#. i18n: file: klocateconfiglocatewidget.ui:132
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4_2)
+#: po/rc.cpp:67 rc.cpp:67
+msgid "Additional &arguments:"
+msgstr "Dodatečné &argumente:"
+
+#. i18n: file: klocateconfiglocatewidget.ui:173
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_locateAdditionalArguments)
+#: po/rc.cpp:70 rc.cpp:70
+msgid ""
+"Do not use -r or -i here. The first will confuse kio-locate, while the "
+"latter can be changed through the caseSensitivity option."
+msgstr ""
+"Zde nepoužívejte -r nebo -i. První poplete kio-locate a poslední lze "
+"nastavit pomocí volby \"Psaní velkých a malých písmen\"."
+
+#. i18n: file: klocateconfiglocatewidget.ui:182
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: po/rc.cpp:73 rc.cpp:73
+msgid ""
+"<i>Hint:</i> Do not use -r or -i here. The first will confuse kio-locate, "
+"and the latter can be changed through the \"Case sensitivity\" option."
+msgstr ""
+"<i>Rada:</i> Zde nepoužívejte -r nebo -i. První poplete kio-locate a "
+"poslední lze nastavit pomocí volby \"Psaní velkých a malých písmen\"."
+
+#. i18n: file: klocateconfigwidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: po/rc.cpp:76 rc.cpp:76
+msgid "General Settings"
+msgstr "Obecná nastavení"
+
+#. i18n: file: klocateconfigwidget.ui:25
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: po/rc.cpp:79 rc.cpp:79
+msgid "Case se&nsitivity:"
+msgstr "&Psaní velkých a malých písmen"
+
+#. i18n: file: klocateconfigwidget.ui:57
+#. i18n: ectx: property (whatsThis), widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:82 rc.cpp:82
+msgid ""
+"\"Auto\" for automatic case sensitivity determination (lowercase pattern -> "
+"case insensitive, upper or mixedcase pattern -> case sensitive), \"Sensitive"
+"\" for case sensitive and \"Insensitive\" for case insensitive."
+msgstr ""
+
+#. i18n: file: klocateconfigwidget.ui:61
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:85 rc.cpp:85
+#, fuzzy
+msgctxt "Automatic case-sensitivity"
+msgid "Auto"
+msgstr "Automaticky"
+
+#. i18n: file: klocateconfigwidget.ui:66
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:88 rc.cpp:88
+#, fuzzy
+msgctxt "Case-sensitive search"
+msgid "Sensitive"
+msgstr "Používat"
+
+#. i18n: file: klocateconfigwidget.ui:71
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_caseSensitivity)
+#: po/rc.cpp:91 rc.cpp:91
+#, fuzzy
+msgctxt "Case-insensitive search"
+msgid "Insensitive"
+msgstr "Přecházet"
+
+#. i18n: file: klocateconfigwidget.ui:81
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: po/rc.cpp:94 rc.cpp:94
+msgid ""
+"<i>Hint:</i> With \"Auto\" case sensitivity a pattern will be case "
+"insensitive if it is lowercase and case sensitive if it is mixed or "
+"uppercase."
+msgstr ""
+"Když zvolíte \"Automaticky\" bude hledání rozlišovat psaní velkých a malých "
+"písmen jen tehdy, když nejsou všude napsána písmena malá."
+
+#. i18n: file: klocateconfigwidget.ui:94
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: po/rc.cpp:97 rc.cpp:97
+msgid "Collapsing Search Results"
+msgstr "Složit výsledky hledání"
+
+#. i18n: file: klocateconfigwidget.ui:108
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
+#: po/rc.cpp:100 rc.cpp:100
+msgid "&Collapse a directory with more hits:"
+msgstr "&Složit adresáře s více nálezy:"
+
+#. i18n: file: klocateconfigwidget.ui:140
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, kcfg_collapseDirectoryThreshold)
+#: po/rc.cpp:103 rc.cpp:103
+msgid "Collapse a directory with more hits."
+msgstr "Složit adresáře s více nálezy."
+
+#. i18n: file: klocateconfigwidget.ui:160
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
+#: po/rc.cpp:106 rc.cpp:106
+msgid "Text of a collapsed &directory:"
+msgstr "Ukazatel složeného &adresářového hledání:"
+
+#. i18n: file: klocateconfigwidget.ui:204
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_collapsedDisplay)
+#: po/rc.cpp:110 rc.cpp:110
+#, no-c-format
+msgid ""
+"Hint: %1 is substituted by the number of hits, %2 by the name of the "
+"directory."
+msgstr "Rada: %1 je nahrazeno počtem nálezů a %2 názvem adresáře."
+
+#. i18n: file: klocateconfigwidget.ui:213
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3_2)
+#: po/rc.cpp:114 rc.cpp:114
+#, no-c-format
+msgid ""
+"<i>Hint:</i> %1 is substituted by the number of hits and %2 by the name of "
+"the directory."
+msgstr "<i>Rada:</i> %1 je nahrazeno počtem nálezů a %2 názvem adresáře."
+
+#. i18n: file: klocateconfigwidget.ui:225
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: po/rc.cpp:117 rc.cpp:117
+msgid "&Icon of a collapsed directory:"
+msgstr "&Ikona pro složené adresářové hledání:"
+
+#. i18n: file: klocateconfigwidget.ui:258
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:120 rc.cpp:120
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Blue"
+msgstr "Modrá"
+
+#. i18n: file: klocateconfigwidget.ui:263
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:123 rc.cpp:123
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Green"
+msgstr "Zelená"
+
+#. i18n: file: klocateconfigwidget.ui:268
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:126 rc.cpp:126
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Grey"
+msgstr "Šedá"
+
+#. i18n: file: klocateconfigwidget.ui:273
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:129 rc.cpp:129
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Orange"
+msgstr "Oranžová"
+
+#. i18n: file: klocateconfigwidget.ui:278
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:132 rc.cpp:132
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Red"
+msgstr "Červená"
+
+#. i18n: file: klocateconfigwidget.ui:283
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:135 rc.cpp:135
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Violet"
+msgstr "Fialová"
+
+#. i18n: file: klocateconfigwidget.ui:288
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_collapsedIcon)
+#: po/rc.cpp:138 rc.cpp:138
+#, fuzzy
+msgctxt "Folder icon color"
+msgid "Yellow"
+msgstr "Žlutá"
+
+#: po/rc.cpp:139 rc.cpp:139
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: po/rc.cpp:140 rc.cpp:140
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid "(%1 Hits) %2"
+#~ msgstr "(%1 nálezy) %2"
+
+#~ msgid ""
+#~ "<i>Hint:</i> Adding e.g. '/.' will no longer display hidden files (this "
+#~ "will be unnecessary in some next version of kde though)."
+#~ msgstr ""
+#~ "<i>Rada:</i> Přidejte například '/\\.', aby se při hledání přecházely "
+#~ "skryté soubory (v některé z příštích verzí toto již nebude potřeba)."
+
+#~ msgid "KLocateConfigFilterWidget"
+#~ msgstr "KLocateConfigFilterWidget"
+
+#~ msgid "KLocateConfigLocateWidget"
+#~ msgstr "KLocateConfigLocateWidget"
+
+#~ msgid ""
+#~ "<i>Hint:</i> You may for example choose to use slocate instead of plain "
+#~ "old locate."
+#~ msgstr ""
+#~ "<i>Rada:</i> Například namísto prostého starého locate si můžete vybrat a "
+#~ "používat slocate."
+
+#~ msgid "KLocateConfigWidget"
+#~ msgstr "KLocateConfigWidget"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Pavel Fric"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "fripohled.blogspot.com"

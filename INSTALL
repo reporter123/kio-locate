@@ -1,0 +1,9 @@
+QUICKSTART
+
+kio-locate for KDE4 uses cmake for configuring and building. In
+general it should suffice to execute (if you have cmake installed):
+
+$ mkdir build && cd build
+$ cmake -DCMAKE_BUILD_TYPE=(Debug|Release) -DCMAKE_INSTALL_PREFIX=<kde-install-dir> ..
+$ make
+$ sudo make install

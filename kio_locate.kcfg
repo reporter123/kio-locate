@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+
+  <include>klocale.h</include>
+  <kcfgfile name="kio_locaterc"/>
+  <group name="General">
+	<entry name="caseSensitivity" type="Int">
+		<label>Case sensitivity</label>
+		<default>0</default>
+	</entry>
+
+	<entry name="collapseDirectoryThreshold" type="Int">
+		<label>Collapse directory</label>
+		<default>5</default>
+	</entry>
+
+	<entry name="collapsedDisplay" type="String">
+		<label>How to display a collapsed directory entry</label>
+		<default code="true">i18n("(%1 Hits) %2")</default>
+    </entry>
+
+	<entry name="collapsedIcon" type="Int">
+		<label>Icon to use for a collapsed directory entry</label>
+		<default>1</default>
+	</entry>
+  </group>
+
+  <group name="Filtering">
+	<entry name="whiteList" type="StringList">
+		<label>White list</label>
+		<default>.</default>
+	</entry>
+
+	<entry name="blackList" type="StringList">
+		<label>Black list</label>
+		<default></default>
+	</entry>
+  </group>
+
+  <group name="Locate">
+    <entry name="locateBinary" type="String">
+	    <label>Locate Binary</label>
+	    <default></default>
+    </entry>
+
+    <entry name="locateAdditionalArguments" type="String">
+	    <label>Additional Arguments for locate</label>
+	    <default></default>
+    </entry>
+  </group>
+
+</kcfg>
