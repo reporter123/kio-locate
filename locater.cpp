@@ -99,15 +99,6 @@ bool Locater::locate(const QString& pattern, bool ignoreCase, bool regExp)
 	}
 	m_process << pattern;
 
-	/*m_process.start();
-	while (m_process.state() == QProcess::Starting) {
-		KApplication::processEvents();
-		usleep(10000);
-	}
-	while (m_process.state() == QProcess::Running) {
-		KApplication::processEvents();
-		usleep(10000);
-	}*/
 	//KIO jobs are asyncrinous so just use KProcess::execute here.	
 	return (m_process.execute() == QProcess::NormalExit);
 }
