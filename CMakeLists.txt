@@ -35,8 +35,7 @@ add_library(kio_locate MODULE ${kio_locate_PART_SRCS} ${kio_locate_PART_RCCS})
 
 target_link_libraries(kio_locate KF5::KDELibs4Support KF5::KIOCore)
 
-install(TARGETS kio_locate DESTINATION ${PLUGIN_INSTALL_DIR} )
-
+install(TARGETS kio_locate DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kio )
 
 ########### install files ###############
 

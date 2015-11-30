@@ -850,7 +850,7 @@ bool LocateProtocol::isHelpRequest()
 void LocateProtocol::helpRequest()
 {
     // Redirect the user to our help documents.
-    redirection(KUrl("help:/kioslave/kio-locate/"));
+    redirection(QUrl("help:/kioslave/kio-locate/"));
     finished();
 }
 

@@ -1,5 +1,5 @@
 [Protocol]
-exec=kio_locate
+exec=kf5/kio/kio_locate
 protocol=locater
 input=none
 output=filesystem
