@@ -365,11 +365,7 @@ void LocateProtocol::stat(const QUrl& url)
     kDebug() << "LocateProtocol::stat(" << url << ")" << endl ;
 
     setUrl(url);
-    // Triggers infine launch loop in dolphin.
-    if(url == QString("locate:/") || url == QString("locate:")){
-      error(KIO::ERR_MALFORMED_URL, i18n("no file name specified"));
-      return;
-    }
+
     
     if (isSearchRequest() || isConfigRequest() || isHelpRequest()) {
 	
@@ -379,10 +375,12 @@ void LocateProtocol::stat(const QUrl& url)
         UDSEntry entry;
         entry.insert(KIO::UDSEntry::UDS_NAME, url.toString(QUrl::RemoveScheme));
         entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, isDir ? S_IFDIR : S_IFREG);
-        statEntry(entry);
+	//Avoid infine resucursive call back loop. Makes "dolphin locate:/" == "dolphin --fork-bomb locate:/".
+        if(url != QString("locate:/") && url != QString("locate:")){
+	    statEntry(entry);
+	}
+	
         finished();
-        /// TODO Somehow locate: and locate:/ are thought to be a directory
-        /// by konqueror anyway. How to change this?
     } else {
         // What's this?
         error(KIO::ERR_DOES_NOT_EXIST, QString());
