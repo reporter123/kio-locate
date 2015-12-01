@@ -374,14 +374,14 @@ void LocateProtocol::stat(const QUrl& url)
     if (isSearchRequest() || isConfigRequest() || isHelpRequest()) {
 	
         bool isDir = isSearchRequest() && m_locater.binaryExists();
-        /// \todo Is UDS_NAME used for anything in stat? If so we should
-        /// at least strip of the protocol part.
+        /// TODO Are there ever '/''s in our urls after the scheme?
+	
         UDSEntry entry;
-        entry.insert(KIO::UDSEntry::UDS_NAME, url.toString());
+        entry.insert(KIO::UDSEntry::UDS_NAME, url.toString(QUrl::RemoveScheme));
         entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, isDir ? S_IFDIR : S_IFREG);
         statEntry(entry);
         finished();
-        /// \todo Somehow locate: and locate:/ is thought to be a directory
+        /// TODO Somehow locate: and locate:/ are thought to be a directory
         /// by konqueror anyway. How to change this?
     } else {
         // What's this?
