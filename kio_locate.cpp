@@ -365,9 +365,9 @@ void LocateProtocol::stat(const QUrl& url)
     kDebug() << "LocateProtocol::stat(" << url << ")" << endl ;
 
     setUrl(url);
-    //triggers infine launch loop in dolphin
+    // Triggers infine launch loop in dolphin.
     if(url == QString("locate:/") || url == QString("locate:")){
-      error(KIO::ERR_DOES_NOT_EXIST, QString());
+      error(KIO::ERR_MALFORMED_URL, i18n("no file name specified"));
       return;
     }
     
@@ -787,7 +787,7 @@ void LocateProtocol::configRequest()
     w3.setupUi(page3);
 
     for (uint i = 0; i < sizeof(iconNames)/sizeof(char*); i++) {
-        w1.kcfg_collapsedIcon->setItemIcon(i, KIcon(iconNames[i]));
+        w1.kcfg_collapsedIcon->setItemIcon(i, QIcon(iconNames[i]));
     }
 
     dialog->addPage(page1, i18nc("General settings", "General"), "configure");
