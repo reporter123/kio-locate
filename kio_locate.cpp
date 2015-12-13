@@ -290,6 +290,7 @@ int LocateProtocol::getCollapseDirectoryThreshold() const
 void LocateProtocol::setUrl(const QUrl& url)
 {
     if (url.scheme() != "locater") {
+	//TODO wtf, why are we parsing the url by hand?
         QString pattern = url.toString();
         pattern = pattern.mid(url.scheme().length() + 1);
 
@@ -365,8 +366,17 @@ void LocateProtocol::stat(const QUrl& url)
     kDebug() << "LocateProtocol::stat(" << url << ")" << endl ;
 
     setUrl(url);
-
-    if (isSearchRequest() || isConfigRequest() || isHelpRequest()) {
+  
+    /*
+     * I'm tired of trying to make this work. Error out to avoid recursive call back loop.
+     * Dolphin doesn't handle 'help' protocol anyway. 
+    */
+    if (isHelpRequest()){	
+	error(KIO::ERR_DOES_NOT_EXIST, QString());
+	return;
+    }
+    
+    if (isSearchRequest() || isConfigRequest()) {
 	
         bool isDir = isSearchRequest() && m_locater.binaryExists();
         /// TODO Are there ever '/''s in our urls after the scheme?
