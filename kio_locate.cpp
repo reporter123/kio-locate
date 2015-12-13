@@ -366,19 +366,15 @@ void LocateProtocol::stat(const QUrl& url)
 
     setUrl(url);
 
-    
     if (isSearchRequest() || isConfigRequest() || isHelpRequest()) {
 	
         bool isDir = isSearchRequest() && m_locater.binaryExists();
         /// TODO Are there ever '/''s in our urls after the scheme?
 	
         UDSEntry entry;
-        entry.insert(KIO::UDSEntry::UDS_NAME, url.toString(QUrl::RemoveScheme));
+        entry.insert(KIO::UDSEntry::UDS_NAME, m_url.toString(QUrl::RemoveScheme));
         entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, isDir ? S_IFDIR : S_IFREG);
-	//Avoid infine resucursive call back loop. Makes "dolphin locate:/" == "dolphin --fork-bomb locate:/".
-        if(url != QString("locate:/") && url != QString("locate:")){
-	    statEntry(entry);
-	}
+	statEntry(entry);
 	
         finished();
     } else {
@@ -393,7 +389,7 @@ void LocateProtocol::listDir(const QUrl& url)
     kDebug() << "LocateProtocol::listDir(" << url << ")" << endl ;
 
     setUrl(url);
-
+     
     if (isSearchRequest()) {
         searchRequest();
     } else if (isConfigRequest() || isHelpRequest()) {
