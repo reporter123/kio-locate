@@ -31,4 +31,4 @@ Description[x-test]=xxKDE I/O Slave for the locate commandxx
 Class=:local
 
 # Our very sophisticated documentation
-X-DocPath=kioslave/locate/index.html
+X-DocPath=kioslave5/locate/index.html

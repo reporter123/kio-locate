@@ -34,4 +34,4 @@ Class=:local
 URIMode=rawuri
 
 # Our very sophisticated documentation
-X-DocPath=kioslave/locate/index.html
+X-DocPath=kioslave5/locate/index.html
