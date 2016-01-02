@@ -21,7 +21,8 @@ add_subdirectory(po)
 set(kio_locate_PART_SRCS
    pattern.cpp
    kio_locate.cpp
-   locater.cpp)
+   locater.cpp
+   KUrlCompat.cpp)
 
 qt5_wrap_ui(kio_locate_PART_SRCS
    klocateconfigfilterwidget.ui

@@ -59,14 +59,16 @@
 #include <kio/global.h>
 #include <kio/slavebase.h>
 
+#include <kicon.h>
+
 #include "locater.h"
 #include "pattern.h"
-
-#include <kicon.h>
+#include "KUrlCompat.h"
 #define KDE_EXPORT   __attribute__ ((visibility("default")))
 
 class QByteArray;
-class KUrl;
+class QUrl;
+class KUrlCompat;
 
 class LocateItem;
 class LocateDirectory;
@@ -142,7 +144,7 @@ class LocateProtocol : public QObject, public KIO::SlaveBase
 
  private:
 	Locater m_locater;
-	QUrl m_url;
+	KUrlCompat m_url;
 
 	QString m_locatePattern;
 	LocateRegExp m_locateRegExp;    // Equals m_locatePattern, but regexp.
