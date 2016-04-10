@@ -138,7 +138,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="KIntSpinBox" name="kcfg_collapseDirectoryThreshold">
+         <widget class="QSpinBox" name="kcfg_collapseDirectoryThreshold">
           <property name="whatsThis">
            <string>Collapse a directory with more hits.</string>
           </property>
@@ -318,19 +318,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

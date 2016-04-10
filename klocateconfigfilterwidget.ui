@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>KLocateConfigFilterWidget</class>
  <widget class="QWidget" name="KLocateConfigFilterWidget">
@@ -28,23 +28,33 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="KEditListBox" name="kcfg_whiteList">
+       <widget class="QGroupBox" name="kcfg_whiteListGroup">
         <property name="whatsThis">
          <string>A path must match at least one of these regular expressions.</string>
         </property>
         <property name="title">
          <string>White List</string>
         </property>
+             <layout class="QVBoxLayout" name="verticalLayoutWhiteList">
+      <item>
+       <widget class="KEditListWidget" name="kcfg_whiteList"/>
+      </item>
+     </layout>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="KEditListBox" name="kcfg_blackList">
+       <widget class="QGroupBox" name="kcfg_blackListGroup">
         <property name="whatsThis">
          <string>A path must not match any of these regular expressions.</string>
         </property>
         <property name="title">
          <string>Black List</string>
         </property>
+                <layout class="QVBoxLayout" name="verticalLayoutBlackList">
+      <item>
+       <widget class="KEditListWidget" name="kcfg_blackList"/>
+      </item>
+           </layout>
        </widget>
       </item>
       <item row="2" column="0" colspan="2">
@@ -62,13 +72,7 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KEditListBox</class>
-   <extends>QGroupBox</extends>
-   <header>keditlistbox.h</header>
-  </customwidget>
- </customwidgets>
+ <customwidgets/>
  <resources/>
  <connections/>
 </ui>
