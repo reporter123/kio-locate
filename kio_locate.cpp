@@ -320,7 +320,8 @@ void LocateProtocol::setUrl(const QUrl& url)
 
         kDebug() << "Redirect: " << m_url << endl;
     } else {
-        m_url = url;
+        //This is safe because no class variables are introduced by KUrlCompat and it solely inherits from QUrl.
+        m_url = reinterpret_cast<KUrlCompat&>(const_cast<QUrl&>(url));
     }
     // Perhaps this will be unnecessary most times, but who knows...
     updateConfig();
