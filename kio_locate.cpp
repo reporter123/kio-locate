@@ -41,7 +41,6 @@
 #include <grp.h>
 
 #include <KApplication>
-#include <KComponentData>
 #include <KConfigDialog>
 #include <QDebug>
 #include <KIconLoader>
@@ -1038,7 +1037,6 @@ extern "C"
         // We use KApplication instead of KInstance here, because we use a
         // config dialog and such gui stuff.
         QApplication app(argc, argv);
-        KComponentData componentData("kio_locate");
 
         qDebug() << "*** Starting kio_locate " << endl;
 
