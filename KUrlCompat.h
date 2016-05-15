@@ -9,4 +9,5 @@ class KUrlCompat : public QUrl
  public:
      void addQueryItem( const QString& _item, const QString& _value );
      QString queryItemValue( const QString& _item ) const;
+     void removeQueryItem(const QString &key);
 };

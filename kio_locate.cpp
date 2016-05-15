@@ -40,11 +40,9 @@
 #include <pwd.h>
 #include <grp.h>
 
-#include <KApplication>
-#include <KConfigDialog>
+#include <KConfigWidgets/KConfigDialog>
 #include <QDebug>
-#include <KIconLoader>
-#include <KLocale>
+#include <KIconThemes/KIconLoader>
 #include <KUser>
 #include <QFile>
 #include <kde_file.h>
@@ -762,7 +760,6 @@ bool LocateProtocol::isConfigRequest()
 {
     return m_url.path() == "config";
 }
-
 
 void LocateProtocol::configRequest()
 {

@@ -32,7 +32,6 @@
 #include "locater.h"
 #include <QDebug>
 #include <QStandardPaths>
-#include <KApplication>
 
 
 Locater::Locater(QObject *parent, const char *name)
