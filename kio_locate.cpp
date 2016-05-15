@@ -288,9 +288,8 @@ int LocateProtocol::getCollapseDirectoryThreshold() const
 void LocateProtocol::setUrl(const QUrl& url)
 {
     if (url.scheme() != "locater") {
-	//TODO wtf, why are we parsing the url by hand?
-        QString pattern = url.toString();
-        pattern = pattern.mid(url.scheme().length() + 1);
+	//Let QUrl remove the scheme for us.
+        QString pattern = url.toString(QUrl::RemoveScheme | QUrl::PrettyDecoded);
 
         KUrlCompat newUrl;
         newUrl.setScheme("locater");
@@ -826,8 +825,8 @@ void LocateProtocol::updateConfig()
 {
     // It's not needed to update the config if it's still up to date.
     qDebug() << "LocateProtocol::updateConfig" << endl;
-
-    KLocateConfig::self()->readConfig();
+    //readConfig == load in kf5.
+    KLocateConfig::self()->load();
     m_config.m_caseSensitivity = (LocateCaseSensitivity) KLocateConfig::caseSensitivity();
     m_config.m_collapseDirectoryThreshold = KLocateConfig::collapseDirectoryThreshold();
     m_config.m_collapsedDisplay = KLocateConfig::collapsedDisplay();
