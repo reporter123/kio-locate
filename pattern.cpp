@@ -30,7 +30,7 @@
 
 #include "pattern.h"
 #include <QStringList>
-#include <KDebug>
+#include <QDebug>
 
 
 LocateRegExp::LocateRegExp(const QString& pattern, bool ignoreCase)

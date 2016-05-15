@@ -43,7 +43,7 @@
 #include <KApplication>
 #include <KComponentData>
 #include <KConfigDialog>
-#include <KDebug>
+#include <QDebug>
 #include <KIconLoader>
 #include <KLocale>
 #include <KUser>
@@ -103,7 +103,7 @@ static QString convertWildcardsToRegExp(QString s)
     // Walk through the string, converting \wildcard to regexp and
     // \\\wildcard back to \wildcard.
     for (int i = 1; i < s.length(); ++i) {
-        //kDebug() << s.left(i+1) << endl;
+        //qDebug() << s.left(i+1) << endl;
         if (i < 3 || s[i-3] != '\\' || s[i-2] != '\\') {
             // If it was an unescaped character (now possibly escaped once)
             if (s[i-1] == '\\') {
@@ -251,7 +251,7 @@ static const UDSEntry pathToUDSEntry(const QString& path, const QString& display
 LocateProtocol::LocateProtocol(const QByteArray &pool_socket, const QByteArray &app_socket)
     : SlaveBase("kio_locate", pool_socket, app_socket)
 {
-    kDebug() << "LocateProtocol::LocateProtocol()" << endl;
+    qDebug() << "LocateProtocol::LocateProtocol()" << endl;
 
     connect(&m_locater, SIGNAL(found(const QStringList&)),
              this, SLOT(processLocateOutput(const QStringList&)));
@@ -265,7 +265,7 @@ LocateProtocol::LocateProtocol(const QByteArray &pool_socket, const QByteArray &
 
 LocateProtocol::~LocateProtocol()
 {
-    kDebug() << "LocateProtocol::~LocateProtocol()" << endl;
+    qDebug() << "LocateProtocol::~LocateProtocol()" << endl;
 
     delete m_baseDir;
 }
@@ -296,9 +296,10 @@ void LocateProtocol::setUrl(const QUrl& url)
         KUrlCompat newUrl;
         newUrl.setScheme("locater");
 
-        kDebug() << "Pattern: " << pattern;
+        qDebug() << "Pattern: " << pattern;
 
         if (pattern.isEmpty() || pattern == "/") {
+	    // FIXME: Does not work in dolphin.
             // Give help.
             newUrl.setPath("help");
         } else if (hasTrailingSlash(pattern)) {
@@ -318,7 +319,7 @@ void LocateProtocol::setUrl(const QUrl& url)
         }
         m_url = newUrl;
 
-        kDebug() << "Redirect: " << m_url << endl;
+        qDebug() << "Redirect: " << m_url << endl;
     } else {
         //This is safe because no class variables are introduced by KUrlCompat and it solely inherits from QUrl.
         m_url = reinterpret_cast<KUrlCompat&>(const_cast<QUrl&>(url));
@@ -329,7 +330,7 @@ void LocateProtocol::setUrl(const QUrl& url)
 
 void LocateProtocol::get(const QUrl& url)
 {
-    kDebug() << "LocateProtocol::get(" << url << ")" << endl;
+    qDebug() << "LocateProtocol::get(" << url << ")" << endl;
 
     setUrl(url);
 
@@ -363,7 +364,7 @@ void LocateProtocol::get(const QUrl& url)
 
 void LocateProtocol::stat(const QUrl& url)
 {
-    kDebug() << "LocateProtocol::stat(" << url << ")" << endl ;
+    qDebug() << "LocateProtocol::stat(" << url << ")" << endl ;
 
     setUrl(url);
   
@@ -396,7 +397,7 @@ void LocateProtocol::stat(const QUrl& url)
 
 void LocateProtocol::listDir(const QUrl& url)
 {
-    kDebug() << "LocateProtocol::listDir(" << url << ")" << endl ;
+    qDebug() << "LocateProtocol::listDir(" << url << ")" << endl ;
 
     setUrl(url);
      
@@ -413,7 +414,7 @@ void LocateProtocol::listDir(const QUrl& url)
 
 void LocateProtocol::mimetype(const QUrl& url)
 {
-    kDebug() << "LocateProtocol::mimetype(" << url << ")" << endl ;
+    qDebug() << "LocateProtocol::mimetype(" << url << ")" << endl ;
 
     setUrl(url);
 
@@ -513,8 +514,8 @@ void LocateProtocol::searchRequest()
         }
     }
 
-    kDebug() << "Pattern: " << m_locatePattern << endl;
-    kDebug() << "Directory: " << m_locateDirectory << endl;
+    qDebug() << "Pattern: " << m_locatePattern << endl;
+    qDebug() << "Directory: " << m_locateDirectory << endl;
 
     // We set up the regexp used to see whether the match was in the
     // directory part or the filename part of a path.
@@ -526,7 +527,7 @@ void LocateProtocol::searchRequest()
     bool started = m_locater.locate(m_locatePattern, !isCaseSensitive(m_locatePattern), regexp);
 
     if (!started) {
-        kDebug() << "Locate could not be found." << endl;
+        qDebug() << "Locate could not be found." << endl;
         finished();
     }
 }
@@ -550,7 +551,7 @@ bool LocateProtocol::isCaseSensitive(const QString& text)
 
 void LocateProtocol::addHit(const QString& path, int subItems)
 {
-    // kDebug() << "LocateProtocol::addHit( " << path << ", " << subItems << " )" << endl;
+    // qDebug() << "LocateProtocol::addHit( " << path << ", " << subItems << " )" << endl;
     if (QFile::exists(path)) {
         if (subItems > 0) {
             m_entries += pathToUDSEntry(path, pathToDisplay(path, subItems), makeLocaterUrl(path), iconNames[m_config.m_collapsedIcon]);
@@ -640,7 +641,7 @@ void LocateProtocol::locateFinished()
     }
     addPreviousLocateOutput();
 
-    kDebug() << "LocateProtocol::locateFinished" << endl;
+    qDebug() << "LocateProtocol::locateFinished" << endl;
     infoMessage(i18nc("Locate processing finished.", "Finished."));
     finished();
 }
@@ -648,7 +649,7 @@ void LocateProtocol::locateFinished()
 
 QString LocateProtocol::partToPattern(const QString& part, bool forLocate)
 {
-    kDebug() << "BEG part: " << part << endl;
+    qDebug() << "BEG part: " << part << endl;
     QString pattern = part;
     // Unescape whitespace.
     pattern.replace("\\ ", " ");
@@ -698,7 +699,7 @@ QString LocateProtocol::partToPattern(const QString& part, bool forLocate)
         }
         pattern.replace("\\~", "~");
     }
-    kDebug() << "END part: " << pattern << endl;
+    qDebug() << "END part: " << pattern << endl;
     return pattern;
 }
 
@@ -810,7 +811,7 @@ void LocateProtocol::configRequest()
 
 void LocateProtocol::configFinished()
 {
-    kDebug() << "LocateProtocol::configFinished" << endl;
+    qDebug() << "LocateProtocol::configFinished" << endl;
 
     QString html;
     if (m_configUpdated) {
@@ -825,7 +826,7 @@ void LocateProtocol::configFinished()
 void LocateProtocol::updateConfig()
 {
     // It's not needed to update the config if it's still up to date.
-    kDebug() << "LocateProtocol::updateConfig" << endl;
+    qDebug() << "LocateProtocol::updateConfig" << endl;
 
     KLocateConfig::self()->readConfig();
     m_config.m_caseSensitivity = (LocateCaseSensitivity) KLocateConfig::caseSensitivity();
@@ -1003,10 +1004,10 @@ void LocateDirectory::debugTrace(int level)
 {
     QString ws;
     ws.fill(' ', level);
-    kDebug() << ws << m_path << endl;
+    qDebug() << ws << m_path << endl;
     LocateItems::ConstIterator item = m_items.begin();
     for (; item != m_items.end(); ++item) {
-        kDebug() << ws << "+ " << (*item).m_path << endl;
+        qDebug() << ws << "+ " << (*item).m_path << endl;
     }
     LocateDirectoriesIterator child(m_childs);
     while (child.hasNext()) {
@@ -1039,17 +1040,17 @@ extern "C"
         QApplication app(argc, argv);
         KComponentData componentData("kio_locate");
 
-        kDebug() << "*** Starting kio_locate " << endl;
+        qDebug() << "*** Starting kio_locate " << endl;
 
         if (argc != 4) {
-            kDebug() << "Usage: kio_locate  protocol domain-socket1 domain-socket2" << endl;
+            qDebug() << "Usage: kio_locate  protocol domain-socket1 domain-socket2" << endl;
             exit(-1);
         }
 
         LocateProtocol slave(argv[2], argv[3]);
         slave.dispatchLoop();
 
-        kDebug() << "*** kio_locate Done" << endl;
+        qDebug() << "*** kio_locate Done" << endl;
         return 0;
     }
 }

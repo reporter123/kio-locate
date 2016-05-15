@@ -30,8 +30,8 @@
 
 #include <unistd.h>
 #include "locater.h"
-#include <KDebug>
-#include <KStandardDirs>
+#include <QDebug>
+#include <QStandardPaths>
 #include <KApplication>
 
 
@@ -40,7 +40,7 @@ Locater::Locater(QObject *parent, const char *name)
 {
 	setObjectName(name);
 
-	kDebug() << "Locater::Locater" << endl;
+	qDebug() << "Locater::Locater" << endl;
 
 	m_process.setOutputChannelMode(KProcess::OnlyStdoutChannel);
 	//m_process.setReadChannel(QProcess::StandardOutput);
@@ -55,35 +55,35 @@ Locater::Locater(QObject *parent, const char *name)
 
 Locater::~Locater()
 {
-	kDebug() << "Locater::~Locater" << endl;
+	qDebug() << "Locater::~Locater" << endl;
 }
 
 
 void Locater::setupLocate(const QString& binary, const QString& additionalArguments)
 {
-	kDebug() << "Locater::setupLocate(" << binary << ", " << additionalArguments << ")" << endl;
+	qDebug() << "Locater::setupLocate(" << binary << ", " << additionalArguments << ")" << endl;
 
     // Automatically choose the correct binary if not specified.
     if (binary.isEmpty()) {
-        if (!KStandardDirs::findExe("slocate").isEmpty()) {
+        if (!QStandardPaths::findExecutable("slocate").isEmpty()) {
             m_binary = "slocate";
-        } else if (!KStandardDirs::findExe("rlocate").isEmpty()) {
+        } else if (!QStandardPaths::findExecutable("rlocate").isEmpty()) {
             m_binary = "rlocate";
         } else {
             m_binary = "locate";
         }
-        kDebug() << "Using binary:" << m_binary << endl;
+        qDebug() << "Using binary:" << m_binary << endl;
     } else {
         m_binary = binary;
     }
 	m_additionalArguments = additionalArguments;
-    m_binaryExists = !KStandardDirs::findExe(m_binary).isEmpty();
+    m_binaryExists = !QStandardPaths::findExecutable(m_binary).isEmpty();
 }
 
 
 bool Locater::locate(const QString& pattern, bool ignoreCase, bool regExp)
 {
-	kDebug() << "Locater::locate(" << pattern << "," << ignoreCase << "," << regExp << ")" << endl;
+	qDebug() << "Locater::locate(" << pattern << "," << ignoreCase << "," << regExp << ")" << endl;
 
 	//m_process.reset();
 	m_process << m_binary;
@@ -105,7 +105,7 @@ bool Locater::locate(const QString& pattern, bool ignoreCase, bool regExp)
 
 void Locater::stop()
 {
-	kDebug() << "Locater::stop()" << endl;
+	qDebug() << "Locater::stop()" << endl;
 
 	m_process.kill();
 	emit finished();
@@ -114,13 +114,13 @@ void Locater::stop()
 
 void Locater::gotOutput()
 {
-	kDebug() << "Locater::gotOutput" << endl;
+	qDebug() << "Locater::gotOutput" << endl;
 
 	QStringList items;
 
 	while (m_process.canReadLine()) {
 		QString line = m_process.readLine().trimmed();
-		//kDebug() << "OUTPUT>> '" << line << "'" << endl;
+		//qDebug() << "OUTPUT>> '" << line << "'" << endl;
 
 		items << line;
 	}
@@ -131,7 +131,7 @@ void Locater::gotOutput()
 
 void Locater::finished(int, QProcess::ExitStatus)
 {
-	kDebug() << "Locater::finished" << endl;
+	qDebug() << "Locater::finished" << endl;
 
 	emit finished();
 }
