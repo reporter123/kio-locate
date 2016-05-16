@@ -1,3 +1,8 @@
+kio-locate (0.6.0)
+  
+  * ported to Qt5/Framework
+  * avoid triggering fork bomb in dolphin -- now displays popup error for "locate:" or "locate:/"
+
 kio-locate (0.5.0)  2010-02-26 -- Bernd Brandstetter
 
   * Ported to KDE4
