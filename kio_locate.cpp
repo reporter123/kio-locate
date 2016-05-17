@@ -289,7 +289,7 @@ void LocateProtocol::setUrl(const QUrl& url)
 	//Let QUrl remove the scheme for us.
         QString pattern = url.toString(QUrl::RemoveScheme | QUrl::PrettyDecoded);
 
-        KUrlCompat newUrl;
+        QUrl newUrl;
         newUrl.setScheme("locater");
 
         qDebug() << "Pattern: " << pattern;
@@ -302,23 +302,22 @@ void LocateProtocol::setUrl(const QUrl& url)
             // Detect auto-completion from within konqueror and "stop"
             // this search.
             newUrl.setPath("autosearch");
-            newUrl.addQueryItem(queryQuery, pattern);
+            UrlUtils::addQueryItem(newUrl, queryQuery, pattern);
         } else if (url.scheme() == "rlocate") {
             // Standard regexp search.
             newUrl.setPath("search");
-            newUrl.addQueryItem(queryQuery, pattern);
-            newUrl.addQueryItem(queryRegExp, "1");
+            UrlUtils::addQueryItem(newUrl, queryQuery, pattern);
+            UrlUtils::addQueryItem(newUrl, queryRegExp, "1");
         } else {
             // Standard wildcard search.
             newUrl.setPath("search");
-            newUrl.addQueryItem(queryQuery, pattern);
+            UrlUtils::addQueryItem(newUrl, queryQuery, pattern);
         }
         m_url = newUrl;
 
         qDebug() << "Redirect: " << m_url << endl;
     } else {
-        //This is safe because no class variables are introduced by KUrlCompat and it solely inherits from QUrl.
-        m_url = reinterpret_cast<KUrlCompat&>(const_cast<QUrl&>(url));
+        m_url = url;
     }
     // Perhaps this will be unnecessary most times, but who knows...
     updateConfig();
@@ -462,17 +461,17 @@ void LocateProtocol::searchRequest()
 
     updateConfig();
 
-    QString query = m_url.queryItemValue(queryQuery);
-    m_locateDirectory = addTrailingSlash(m_url.queryItemValue(queryDirectory));
+    QString query = UrlUtils::queryItemValue(m_url, queryQuery);
+    m_locateDirectory = addTrailingSlash(UrlUtils::queryItemValue(m_url, queryDirectory));
 
-    QString caseSensitivity = m_url.queryItemValue(queryCase);
+    QString caseSensitivity = UrlUtils::queryItemValue(m_url, queryCase);
     if (caseSensitivity == "sensitive") {
         m_caseSensitivity = caseSensitive;
     } else if (caseSensitivity == "insensitive") {
         m_caseSensitivity = caseInsensitive;
     }
 
-    QString useRegExp = m_url.queryItemValue(queryRegExp);
+    QString useRegExp = UrlUtils::queryItemValue(m_url, queryRegExp);
     if (!useRegExp.isEmpty() && useRegExp != "0") {
         m_useRegExp = true;
     }
@@ -746,9 +745,9 @@ QString LocateProtocol::pathToDisplay(const QString& path, int subItems)
 
 QString LocateProtocol::makeLocaterUrl(const QString& directory)
 {
-    KUrlCompat url(m_url);
-    url.removeQueryItem(queryDirectory);
-    url.addQueryItem(queryDirectory, directory);
+    QUrl url(m_url);
+    UrlUtils::removeQueryItem(url, queryDirectory);
+    UrlUtils::addQueryItem(url, queryDirectory, directory);
     return url.url();
 }
 
